@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
-from garage.models import Accessory, Category
-from garage.serializers import AccessorySerializer, CategorySerializer
+from garage.models import Accessory, Category, Color
+from garage.serializers import AccessorySerializer, CategorySerializer, ColorSerializer
 
 class AccessoryViewSet(ModelViewSet):
     queryset = Accessory.objects.all()
@@ -10,3 +10,7 @@ class AccessoryViewSet(ModelViewSet):
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+class ColorViewSet(ModelViewSet):
+    queryset = Color.objects.all()
+    serializer_class = ColorSerializer
