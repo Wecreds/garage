@@ -19,11 +19,11 @@ from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
-from garage.views import AccessoryViewSet
+from garage.views import AccessoryViewSet, CategoryViewSet
 
 router = DefaultRouter()
 router.register(r"accessories", AccessoryViewSet)
-
+router.register(r"categories", CategoryViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
