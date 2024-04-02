@@ -1,3 +1,4 @@
+from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
 from garage.models import Accessory, Category, Color
@@ -13,6 +14,11 @@ class CategorySerializer(ModelSerializer):
         fields = "__all__"
 
 class ColorSerializer(ModelSerializer):
+    name = serializers.SerializerMethodField()
+
     class Meta:
         model = Color
-        fields = "__all__"
+        fields = ['id', 'name']
+        
+    def get_name(self, obj):
+        return obj.name.upper()
