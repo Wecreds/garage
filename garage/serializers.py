@@ -14,11 +14,7 @@ class CategorySerializer(ModelSerializer):
         fields = "__all__"
 
 class ColorSerializer(ModelSerializer):
-    name = serializers.SerializerMethodField()
-
+    
     class Meta:
         model = Color
-        fields = ['id', 'name']
-        
-    def get_name(self, obj):
-        return obj.name.upper()
+        fields = "__all__"
